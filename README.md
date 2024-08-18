@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto voltado para o upload e processamento de arquivos XML e visualização de relatórios dos arquivos. 
 
-Things you may want to cover:
+## CONFIGURAÇÕES 
 
-* Ruby version
+Aplicação desenvolvida em Ruby on Rails (versão 7.2), utilizando o SQlite3 do próprio rails como banco de dados por ser uma aplicação simples.
 
-* System dependencies
+## GEMS - DEPENDÊNCIAS
 
-* Configuration
+* Devise: Autenticação de usuários
 
-* Database creation
+* Sidekiq: Processamentos em background
 
-* Database initialization
+* Redis: para armazenamento das tarefas do Sidekiq
 
-* How to run the test suite
+* Active storage validations: Validação de upload
 
-* Services (job queues, cache servers, search engines, etc.)
+* Nokogiri: API para ler, escrever, modificar e consultar documentos XML. 
 
-* Deployment instructions
+* Rspec rails: testes automatizados
 
-* ...
+## COMANDOS
+
+´rail s: para subir o servidor´
+´bundle install: para instalar as gems´
+´bundle exec sidekiq: para executar o sidekip´
+´redis-server: para executar o redis´
+
