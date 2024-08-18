@@ -12,7 +12,7 @@
   <% end %>
 
 <% end %>
-  <%= form_with(model: @document, local: true) do |form| %>
+  <%= form_with(model: @document, local: true, multipart: true) do |form| %>
      <div>
       <%= form.label :file_name, style: "display: block" %>
       <%= form.text_field :file_name %>
