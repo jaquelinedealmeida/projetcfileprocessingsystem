@@ -1,24 +1,18 @@
-<h2>Faça o login na sua conta</h2>
+<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :email, "E-mail" %>
-    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { method: :post }) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, required: true %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :password, "Senha" %>
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, required: true %>
   </div>
 
-  <div class="form-group">
-    <%= f.check_box :remember_me %> 
-    <%= f.label :remember_me, "Lembrar-me" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit "Entrar", class: "btn btn-primary" %>
+  <div class="actions">
+    <%= f.submit "Log in" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
