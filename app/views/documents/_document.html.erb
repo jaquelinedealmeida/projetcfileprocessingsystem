@@ -10,16 +10,18 @@
   </p>
 
   <p>
-    <strong>Download:</strong>
-    <%= link_to @document.file_name, rails_blob_path(@document.file, disposition: "attachment") %>
-  </p>
+    <strong>File:</strong>
+    <%= link_to document.file_name, rails_blob_path(document.file, disposition: "attachment") if document.file.attached? %>
+ </p>
 
-  
 
-  <% if @document.file.attached? %>
+ <% if document.file.attached? %>
     <h3>File Content:</h3>
     <pre>
-      <%= raw @document.file.download %>
+      <%= raw document.file.download %>
     </pre>
-  <% end %>
+<% else %>
+    <p>No file attached</p>
+<% end %>
+
 </div>
