@@ -1,10 +1,18 @@
-# README
+
+# PROJETO - SISTEMA DE PROCESSAMENTO DE ARQUIVOS
+
+## OBJETIVO
 
 Projeto voltado para o upload e processamento de arquivos XML e visualização de relatórios dos arquivos. 
 
 ## CONFIGURAÇÕES 
 
-Aplicação desenvolvida em Ruby on Rails (versão 7.2), utilizando o SQlite3 do próprio rails como banco de dados por ser uma aplicação simples.
+Aplicação desenvolvida em Ruby on Rails, utilizando o SQlite3 do próprio rails como banco de dados por ser uma aplicação simples.
+
+## VERSÕES
+
+* Ruby 3.1.2p20
+* Rails Rails 7.2.0
 
 ## GEMS - DEPENDÊNCIAS
 
@@ -22,8 +30,14 @@ Aplicação desenvolvida em Ruby on Rails (versão 7.2), utilizando o SQlite3 do
 
 ## COMANDOS
 
-´rail s: para subir o servidor´
-´bundle install: para instalar as gems´
-´bundle exec sidekiq: para executar o sidekip´
-´redis-server: para executar o redis´
+`rail s: subir o servidor`
 
+`bundle install: instalarção das gems`
+
+`bundle exec sidekiq: execução do sidekip`
+
+`redis-server: execução do redis`
+
+## Autores
+
+- [Jaqueline de Almeida](https://www.linkedin.com/in/jaqueline-de-almeida/)
