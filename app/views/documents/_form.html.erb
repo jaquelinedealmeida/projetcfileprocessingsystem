@@ -11,22 +11,21 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
+<% end %>
+  <%= form_with(model: @document, local: true) do |form| %>
+     <div>
+      <%= form.label :file_name, style: "display: block" %>
+      <%= form.text_field :file_name %>
+    </div>
 
-  <div>
-    <%= form.label :file, style: "display: block" %>
-    <%= form.text_field :file %>
-  </div>
+    <div>
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_area :description %>
+    </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+    <div>
+      <%= form.label :file, style: "display: block" %>
+      <%= form.file_field :file %>
+    </div>
+  <%= form.submit "Upload" %>
 <% end %>
