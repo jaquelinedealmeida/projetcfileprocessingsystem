@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   
   get "/home", to: "home#index"
   root "home#index"
-  
+  get '/favicon.ico', to: ->(_) { [204, {}, []] }
+
   resources :user_dashboard, only: [:index]
   resources :documents
   resources :reports, only: [:index, :show]
