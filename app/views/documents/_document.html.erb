@@ -1,4 +1,7 @@
-<div id="<%= dom_id document %>">
+<% if document.file.attached? %>
+  <h3>File Content:</h3>
+  <% doc = Nokogiri::XML(document.file.download) %>
+
   <p>
     <strong>File Name:</strong>
     <%= document.file_name %>
@@ -8,20 +11,23 @@
     <strong>Description:</strong>
     <%= document.description %>
   </p>
-
-  <p>
-    <strong>File:</strong>
-    <%= link_to document.file_name, rails_blob_path(document.file, disposition: "attachment") if document.file.attached? %>
- </p>
-
-
- <% if document.file.attached? %>
-    <h3>File Content:</h3>
-    <pre>
-      <%= raw document.file.download %>
-    </pre>
 <% else %>
-    <p>No file attached</p>
+  <p>No file attached</p>
 <% end %>
 
-</div>
+<% if document.file.attached? %>
+  <h3>File Attached:</h3>
+  <%= link_to 'Download File', rails_blob_path(document.file, disposition: "attachment"), class: "btn btn-primary" %>
+<% else %>
+  <p>No file attached</p>
+<% end %>
+
+<% if document.file.attached? %>
+  <h3>File Content:</h3>
+  <div style="background-color: #f9f9f9; padding: 15px; border: 1px solid #ddd; overflow-x: auto;">
+    <pre><%= raw document.file.download %></pre>
+  </div>
+<% else %>
+  <p>No file attached</p>
+<% end %>
+

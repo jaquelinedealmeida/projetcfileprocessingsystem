@@ -1,3 +1,33 @@
-<h1>Reports#show</h1>
-<p>Find me in app/views/reports/show.html.erb</p>
+<div>
+  <h1>Relatório do Documento</h1>
 
+  <h2>Dados do Documento Fiscal</h2>
+  <p><strong>Número de Série:</strong> <%= @serie %></p>
+  <p><strong>Número da Nota Fiscal:</strong> <%= @nNF %></p>
+  <p><strong>Data e Hora de Emissão:</strong> <%= @dhEmi %></p>
+  <p><strong>Emitente:</strong> <%= @emit %></p>
+  <p><strong>Destinatário:</strong> <%= @dest %></p>
+
+  <h2>Produtos Listados</h2>
+  <ul>
+    <% @products.each do |product| %>
+      <li>
+        <strong>Nome:</strong> <%= product[:name] %><br>
+        <strong>NCM:</strong> <%= product[:ncm] %><br>
+        <strong>Quantidade:</strong> <%= product[:quantidade] %><br>
+        <strong>Valor Unitário:</strong> <%= product[:valor_unitario] %><br>
+        <strong>Valor Total:</strong> <%= product[:valor_total] %><br>
+      </li>
+    <% end %>
+  </ul>
+
+  <h2>Impostos Associados</h2>
+  <p><strong>Valor do ICMS:</strong> <%= @taxes[:icms] %></p>
+  <p><strong>Valor do IPI:</strong> <%= @taxes[:ipi] %></p>
+  <p><strong>Valor do PIS:</strong> <%= @taxes[:pis] %></p>
+  <p><strong>Valor do COFINS:</strong> <%= @taxes[:cofins] %></p>
+
+  <h2>Totalizadores</h2>
+  <p><strong>Total de Produtos:</strong> <%= @total_produtos %></p>
+  <p><strong>Total de Impostos:</strong> <%= @total_impostos %></p>
+</div>

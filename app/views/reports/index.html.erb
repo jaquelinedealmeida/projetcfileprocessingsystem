@@ -1,2 +1,21 @@
-<h1>Reports</h1>
-<p>Follow your documents uploads</p>
+<h1>Document Reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>File</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= document.id %></td>
+        <td><%= document.description %></td>
+        <td><%= link_to 'Download', rails_blob_path(document.file, disposition: "attachment"), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Show', report_path(document), class: "btn btn-success" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
