@@ -14,18 +14,20 @@
 <% end %>
   <%= form_with(model: @document, local: true, multipart: true) do |form| %>
      <div>
-      <%= form.label :file_name, style: "display: block" %>
-      <%= form.text_field :file_name %>
+      <%= form.label :file_name, style: "display: block", class:"form-label" %>
+      <%= form.text_field :file_name, class:"form-control" %>
     </div>
 
     <div>
       <%= form.label :description, style: "display: block" %>
-      <%= form.text_area :description %>
+      <%= form.text_area :description, class:"form-control" %>
     </div>
 
     <div>
       <%= form.label :file, style: "display: block" %>
-      <%= form.file_field :file %>
+      <%= form.file_field :file, class:"btn btn-success" %>
     </div>
-  <%= form.submit "Upload" %>
+
+    <br>
+  <%= form.submit "Upload", class:"btn btn-primary" %>
 <% end %>

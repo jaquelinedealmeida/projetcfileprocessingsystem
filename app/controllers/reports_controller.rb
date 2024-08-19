@@ -1,6 +1,15 @@
 class ReportsController < ApplicationController
   def index
     @documents = Document.all
+
+    @documents = @documents.where('serie = ?', params[:serie]) if params[:serie].present?
+    @documents = @documents.where('nNF = ?', params[:nNF]) if params[:nNF].present?
+    @documents = @documents.where('dhEmi >= ?', params[:start_date]) if params[:start_date].present?
+    @documents = @documents.where('dhEmi <= ?', params[:end_date]) if params[:end_date].present?
+    @documents = @documents.where('emit LIKE ?', "%#{params[:emit]}%") if params[:emit].present?
+    @documents = @documents.where('dest LIKE ?', "%#{params[:dest]}%") if params[:dest].present?
+
+    @documents = @documents.order(created_at: :desc)
   end
 
   def show

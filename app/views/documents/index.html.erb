@@ -9,6 +9,7 @@
 <div id="documents">
   <% @documents.each do |document| %>
     <%= render document %>
+    <br>
     <p>
       <%= link_to "Show this document", document, class: "btn btn-success" %>
     </p>

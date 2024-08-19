@@ -63,6 +63,6 @@ class DocumentsController < ApplicationController
     end
 
     def document_params
-      params.require(:document).permit(:file_name, :description, :file)
-    end
+      params.require(:document).permit(:file_name, :description, :file,:serie, :nNF, :dhEmi, :emit, :dest)
+    end 
 end
