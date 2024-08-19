@@ -1,21 +1,70 @@
-<h1>Document Reports</h1>
+<h1>Relatórios de Documentos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Description</th>
-      <th>File</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @documents.each do |document| %>
+<%= form_with url: reports_path, method: :get, local: true do |form| %>
+  <div>
+    <%= form.label :serie, 'Número de Série:' %>
+    <%= form.text_field :serie %>
+  </div>
+
+  <div>
+    <%= form.label :nNF, 'Número da Nota Fiscal:' %>
+    <%= form.text_field :nNF %>
+  </div>
+
+  <div>
+    <%= form.label :start_date, 'Data de Início:' %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date, 'Data de Término:' %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div>
+    <%= form.label :emit, 'Emitente:' %>
+    <%= form.text_field :emit %>
+  </div>
+
+  <div>
+    <%= form.label :dest, 'Destinatário:' %>
+    <%= form.text_field :dest %>
+  </div>
+
+  <div>
+    <%= form.submit 'Filtrar' %>
+  </div>
+<% end %>
+
+<% if @documents.any? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= document.id %></td>
-        <td><%= document.description %></td>
-        <td><%= link_to 'Download', rails_blob_path(document.file, disposition: "attachment"), class: "btn btn-primary" %></td>
-        <td><%= link_to 'Show', report_path(document), class: "btn btn-success" %></td>
+        <th>ID</th>
+        <th>Número de Série</th>
+        <th>Número da Nota Fiscal</th>
+        <th>Data e Hora de Emissão</th>
+        <th>Emitente</th>
+        <th>Destinatário</th>
+        <!-- Adicione outras colunas conforme necessário -->
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @documents.each do |document| %>
+        <tr>
+          <td><%= document.id %></td>
+          <td><%= document.serie || "Não disponível" %></td>
+          <td><%= document.nNF || "Não disponível" %></td>
+          <td><%= document.dhEmi.present? ? document.dhEmi.strftime('%d/%m/%Y %H:%M:%S') : "Não disponível" %></td>
+          <td><%= document.emit || "Não disponível" %></td>
+          <td><%= document.dest || "Não disponível" %></td>
+          <td><%= link_to 'Download', rails_blob_path(document.file, disposition: "attachment"), class: "btn btn-primary" %></td>
+          <td><%= link_to 'Show', report_path(document), class: "btn btn-success" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Sem documentos disponíveis.</p>
+<% end %>
+
