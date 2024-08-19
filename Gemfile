@@ -41,20 +41,20 @@ gem "importmap-rails"
 group :development, :test do
   #gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ], require: "debug/prelude"
 
-  gem "brakeman", require: false
+  #gem "brakeman", require: false
 
-  gem "rubocop-rails-omakase", require: false
+  #gem "rubocop-rails-omakase", require: false
 
-  gem "rspec-rails", group: [:development, :test] 
+  #gem "rspec-rails", group: [:development, :test] 
 end
 
 group :development do
-  gem "web-console"
+  #gem "web-console"
 
-  gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+  #gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 end
 
 group :test do
-  gem "capybara"
-  gem "selenium-webdriver"
+  #gem "capybara"
+  #gem "selenium-webdriver"
 end
