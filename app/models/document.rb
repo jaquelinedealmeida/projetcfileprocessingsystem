@@ -1,11 +1,7 @@
 class Document < ApplicationRecord
-  #belongs_to :user
-
   has_one_attached :file
-  # has_many_attached :files
 
   validates :file, attached: true
-
   validate :correct_file_type
 
   private
