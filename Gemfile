@@ -18,7 +18,7 @@ gem "jbuilder"
 
 gem "redis", ">= 4.0.1"
 
-gem "tzinfo-data" #platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
+gem "tzinfo-data"
 
 gem "bootsnap", require: false
 
@@ -28,10 +28,8 @@ gem "sidekiq"
 
 gem "active_storage_validations"
 
-# Para descompactação de arquivos ZIP
 gem "zip" 
 
-# Para exportação de relatórios em Excel
 gem "caxlsx_rails" 
 
 gem 'nokogiri'
