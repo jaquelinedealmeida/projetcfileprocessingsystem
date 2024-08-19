@@ -20,7 +20,7 @@ gem "redis", ">= 4.0.1"
 
 gem "tzinfo-data"
 
-gem "bootsnap", require: false
+#gem "bootsnap", require: false
 
 gem "devise"
 
