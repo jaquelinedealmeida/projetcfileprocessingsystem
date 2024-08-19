@@ -34,8 +34,6 @@ Aplicação desenvolvida em Ruby on Rails, utilizando o SQlite3 do próprio rail
 
 * Nokogiri: API para ler, escrever, modificar e consultar documentos XML. 
 
-* Rspec rails: testes automatizados
-
 ## COMANDOS
 
 `rail s: subir o servidor`
