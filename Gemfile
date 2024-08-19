@@ -36,8 +36,10 @@ gem 'nokogiri'
 
 gem 'psych', '~> 5.0'
 
+gem "importmap-rails"
+
 group :development, :test do
-  gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ], require: "debug/prelude"
+  #gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ], require: "debug/prelude"
 
   gem "brakeman", require: false
 
