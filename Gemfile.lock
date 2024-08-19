@@ -347,6 +347,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   nokogiri
+  psych (~> 5.0)
   puma (>= 5.0)
   rails (~> 7.2.0)
   redis (>= 4.0.1)
@@ -355,7 +356,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq
   sprockets-rails
-  sqlite3 (>= 1.4)
+  sqlite3
   stimulus-rails
   turbo-rails
   tzinfo-data

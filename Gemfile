@@ -4,7 +4,7 @@ gem "rails", "~> 7.2.0"
 
 gem "sprockets-rails"
 
-gem "sqlite3", ">= 1.4"
+gem 'sqlite3'
 
 gem "puma", ">= 5.0"
 
@@ -33,6 +33,8 @@ gem "zip"
 gem "caxlsx_rails" 
 
 gem 'nokogiri'
+
+gem 'psych', '~> 5.0'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ], require: "debug/prelude"
