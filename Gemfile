@@ -10,6 +10,8 @@ gem "puma", ">= 5.0"
 
 gem "importmap-rails", "~> 2.0.1"
 
+gem "importmap"
+
 gem "turbo-rails"
 
 gem "stimulus-rails"
