@@ -35,6 +35,12 @@ jobs:
           ruby-version: 3.3.4
           bundler-cache: true
 
+      - name: Dar permissão de execução ao Brakeman
+        run: chmod +x bin/brakeman
+
+      - name: Scan for common Rails security vulnerabilities using static analysis
+        run: bin/brakeman --no-pager
+
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
 
