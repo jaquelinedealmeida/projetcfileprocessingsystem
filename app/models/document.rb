@@ -8,12 +8,12 @@ class Document < ApplicationRecord
 
   def correct_file_type
     if file.attached?
-      allowed_types = ['text/xml', 'application/xml', 'application/x-xml']
+      allowed_types = [ "text/xml", "application/xml", "application/x-xml" ]
       unless allowed_types.include?(file.content_type)
-        errors.add(:file, 'Must be an XML file')
+        errors.add(:file, "Must be an XML file")
       end
     else
-      errors.add(:file, 'Must be attached')
+      errors.add(:file, "Must be attached")
     end
   end
 end

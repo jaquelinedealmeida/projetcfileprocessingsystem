@@ -26,7 +26,7 @@ class DocumentsController < ApplicationController
 
     if @document.save
       ProcessDocumentJob.perform_later(@document.id)
-      redirect_to @document, notice: 'Document sends with successfull'
+      redirect_to @document, notice: "Document sends with successfull"
     else
       render :new
     end
@@ -63,6 +63,6 @@ class DocumentsController < ApplicationController
     end
 
     def document_params
-      params.require(:document).permit(:file_name, :description, :file,:serie, :nNF, :dhEmi, :emit, :dest)
-    end 
+      params.require(:document).permit(:file_name, :description, :file, :serie, :nNF, :dhEmi, :emit, :dest)
+    end
 end
