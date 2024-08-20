@@ -344,7 +344,7 @@ DEPENDENCIES
   caxlsx_rails
   devise
   error_highlight (>= 0.4.0)
-  importmap-rails
+  importmap-rails (~> 2.0)
   jbuilder
   nokogiri
   psych (~> 5.0)
