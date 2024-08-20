@@ -57,6 +57,12 @@ jobs:
       - name: Set execute permissions on bin scripts
         run: chmod +x bin/*
 
+      - name: Debug permissions
+        run: ls -l bin/
+
+      - name: Install dependencies
+        run: bundle install
+
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bundle exec importmap audit
 

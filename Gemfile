@@ -8,7 +8,7 @@ gem "sqlite3"
 
 gem "puma", ">= 5.0"
 
-gem "importmap-rails", "~> 2.0"
+gem "importmap-rails", "~> 2.0.1"
 
 gem "turbo-rails"
 
