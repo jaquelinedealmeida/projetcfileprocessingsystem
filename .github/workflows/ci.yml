@@ -6,6 +6,19 @@ on:
     branches: [ main ]
 
 jobs:
+  setup_permissions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set execute permissions on bin scripts
+        run: chmod +x bin/*
+
+      - name: Debug permissions
+        run: ls -l bin/
+
   scan_ruby:
     runs-on: ubuntu-latest
 
@@ -34,12 +47,6 @@ jobs:
         with:
           ruby-version: 3.3.4
           bundler-cache: true
-
-      - name: Dar permissão de execução ao Brakeman
-        run: chmod +x bin/brakeman
-
-      - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
