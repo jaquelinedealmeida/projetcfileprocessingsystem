@@ -36,13 +36,15 @@ Aplicação desenvolvida em Ruby on Rails, utilizando o SQlite3 do próprio rail
 
 ## COMANDOS
 
-`rail s: subir o servidor`
+`rail s`: subir o servidor
 
-`bundle install: instalação das gems`
+`bundle install`: instalação das gems
 
-`bundle exec sidekiq: execução do sidekip`
+`bundle exec sidekiq`:: execução do sidekip
 
-`redis-server: execução do redis`
+`redis-server` : execução do redis
+
+`bundle exec rubocop -f github`: lint para correção de erros de indentação, sintaxe.
 
 ## FEATURES A SEREM FEITAS 
 
