@@ -48,6 +48,8 @@ Aplicação desenvolvida em Ruby on Rails, utilizando o SQlite3 do próprio rail
 
 `rails console`: entrar no console do rails para consultas no Banco de dados
 
+`rails db:migrate`: executar migração no banco de dados
+
 ## FEATURES A SEREM FEITAS 
 
 * Implementação de testes automatizados utilizando RSPEC para as funcionalidades principais.    
