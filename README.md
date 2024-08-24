@@ -46,6 +46,8 @@ Aplicação desenvolvida em Ruby on Rails, utilizando o SQlite3 do próprio rail
 
 `bundle exec rubocop -f github`: lint para correção de erros de indentação, sintaxe.
 
+`rails console`: entrar no console do rails para consultas no Banco de dados
+
 ## FEATURES A SEREM FEITAS 
 
 * Implementação de testes automatizados utilizando RSPEC para as funcionalidades principais.    
