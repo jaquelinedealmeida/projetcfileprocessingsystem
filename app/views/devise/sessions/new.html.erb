@@ -3,16 +3,27 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { method: :post }) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, required: true %>
+    <%= f.email_field :email, 
+    autofocus: true, 
+    required: true, 
+    class: 'form-control', 
+    id: 'InputEmail', 
+    aria: { describedby: 'emailHelp' }, 
+    placeholder: 'E-mail' %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, required: true %>
+    <%= f.password_field :password, 
+    required: true,
+    class: 'form-control', 
+    id: 'InputPassword', 
+    placeholder:'Password' %>
   </div>
 
+  <br>
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "btn btn-primary" %>
   </div>
 <% end %>
 
