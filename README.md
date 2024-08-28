@@ -34,6 +34,10 @@ Aplicação desenvolvida em Ruby on Rails, utilizando o SQlite3 do próprio rail
 
 * Nokogiri: API para ler, escrever, modificar e consultar documentos XML. 
 
+## LAYOUTa
+
+* Bootstrap para estilização do layout padrão do Rails.
+
 ## COMANDOS
 
 `rail s`: subir o servidor
@@ -56,6 +60,6 @@ Aplicação desenvolvida em Ruby on Rails, utilizando o SQlite3 do próprio rail
 * Possibilidade de importar um arquivo ZIP contendo vários documentos XML para processamento em lote.    
 * Possibilidade de exportar o relatório em formato excel.
   
-## Autores
+## AUTORA
 
 - [Jaqueline de Almeida](https://www.linkedin.com/in/jaqueline-de-almeida/)
