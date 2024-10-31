@@ -38,7 +38,7 @@ gem "nokogiri"
 
 gem "psych", "~> 5.0"
 
-gem "rubocop", "~> 1.0"
+gem "rubocop", "~> 1.68"
 
 gem "rubocop-rails-omakase"
 
